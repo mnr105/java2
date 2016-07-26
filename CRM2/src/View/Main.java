@@ -8,8 +8,6 @@ import java.util.Set;
 
 import org.hibernate.Session;
 
-import com.sun.javafx.geom.AreaOp.AddOp;
-
 import Model.Angajat;
 import Model.Client;
 import Model.Companie;
@@ -50,8 +48,7 @@ public class Main {
 		s1.setCeTara(Tara.China);
 		s1.setCeSector(SectorInstr.Industrial);
 		s1.setSumar("urmeaza o miscare spectaculoasa!!");
-		
-		
+
 		setStiri.add(s1);
 
 		Conversatie cc1 = new Conversatie();
