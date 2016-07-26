@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -26,6 +28,10 @@ public class Stire {
 
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "stireConv")
 	private Set<Conversatie> conversatie = new HashSet<Conversatie>();
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "STIRE_INTRUMET", joinColumns = @JoinColumn(name = "ID_STIRE"), inverseJoinColumns = @JoinColumn(name = "ID_INSTRUMENT"))
+	private Set<Instrument> stireInstrumet = new HashSet<Instrument>();
 
 	@Column(name = "SURSA")
 	private String sursa;
@@ -50,6 +56,14 @@ public class Stire {
 
 	@Column(name = "GRAD")
 	private int gradImp;
+
+	public Set<Instrument> getStireInstrumet() {
+		return stireInstrumet;
+	}
+
+	public void setStireInstrumet(Set<Instrument> stireInstrumet) {
+		this.stireInstrumet = stireInstrumet;
+	}
 
 	public Long getIdStire() {
 		return idStire;

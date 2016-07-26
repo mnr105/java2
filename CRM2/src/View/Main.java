@@ -8,6 +8,8 @@ import java.util.Set;
 
 import org.hibernate.Session;
 
+import com.sun.javafx.geom.AreaOp.AddOp;
+
 import Model.Angajat;
 import Model.Client;
 import Model.Companie;
@@ -49,6 +51,8 @@ public class Main {
 		s1.setCeSector(SectorInstr.Industrial);
 		s1.setSumar("urmeaza o miscare spectaculoasa!!");
 		
+		
+		setStiri.add(s1);
 
 		Conversatie cc1 = new Conversatie();
 		cc1.setNume("a treia");
@@ -62,6 +66,7 @@ public class Main {
 		bin1.setEmitent("SSIF5");
 		bin1.setTipC(TipContract.Forward);
 		bin1.setTipInstr(TipInstrument.Actiune);
+		bin1.setStire(setStiri);
 		// bin1.setCompanie(companie);
 		Instrument bin2 = new Instrument();
 		// bin2.setEmitent("SSIF6");
@@ -74,6 +79,7 @@ public class Main {
 		bxt.add(bin4);
 
 		prtf.setInstrumente(bxt);
+		s1.getStireInstrumet().add(bin1);
 
 		Session session = Controller.hibernateUtil.getSessionFactory()
 				.openSession();
@@ -88,6 +94,7 @@ public class Main {
 		//
 		// System.out.println(ba35.getEmitent());
 
+		session.save(bin1);
 		session.save(s1);
 
 		// bin2 = (Instrument) session.get(Instrument.class, 1L);
@@ -106,7 +113,7 @@ public class Main {
 
 		session.close();
 
-		//System.out.println(bin2.getTipInstr());
+		// System.out.println(bin2.getTipInstr());
 	}
 
 }

@@ -1,6 +1,8 @@
 package Model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -79,9 +82,24 @@ public class Instrument {
 
 	@Column(name = "PRIMA_DE_ACHIZITITE")
 	private double prima;
+	
+	public Set<Stire> getStire() {
+		return stire;
+	}
+
+	public void setStire(Set<Stire> stire) {
+		this.stire = stire;
+	}
+
+	public void setTipContract(TipContract tipContract) {
+		this.tipContract = tipContract;
+	}
 
 	@Column(name = "STRATEGIE")
 	private String stragetie;
+	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "stireInstrumet")
+	private Set<Stire> stire= new HashSet<Stire>();
 
 	public Long getIdInstr() {
 		return idInstr;
