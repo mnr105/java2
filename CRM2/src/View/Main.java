@@ -1,24 +1,9 @@
 package View;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+import Model.*;
 import org.hibernate.Session;
 
-import Model.Angajat;
-import Model.Client;
-import Model.Companie;
-import Model.Conversatie;
-import Model.Instrument;
-import Model.Portofoliu;
-import Model.SectorInstr;
-import Model.Stire;
-import Model.Tara;
-import Model.TipContract;
-import Model.TipInstrument;
+import java.util.*;
 
 public class Main {
 

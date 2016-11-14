@@ -5,33 +5,33 @@
 
 <hibernate-configuration>
 
-	<session-factory>
+    <session-factory>
 
-		<!-- Database connection settings -->
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/crmll3</property>
-		<property name="hibernate.connection.user">root</property>
-		<property name="hibernate.connection.password">root</property>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/crmll3</property>
+        <property name="hibernate.connection.user">root</property>
+        <property name="hibernate.connection.password">java1010</property>
 
-		<property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
-		<!-- SQL dialect -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
-		<!-- Echo all executed SQL to stdout -->
-		<property name="show_sql">true</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
 
 
-		<mapping class="Model.Angajat" />
-		<mapping class="Model.Client" />
-		<mapping class="Model.Adresa" />
-		<mapping class="Model.Instrument" />
-		<mapping class="Model.Companie" />
-		<mapping class="Model.Conversatie" />
-		<mapping class="Model.Portofoliu" />
-		<mapping class="Model.Stire" />
-		<mapping class="Model.User" />
+        <mapping class="Model.Angajat"/>
+        <mapping class="Model.Client"/>
+        <mapping class="Model.Adresa"/>
+        <mapping class="Model.Instrument"/>
+        <mapping class="Model.Companie"/>
+        <mapping class="Model.Conversatie"/>
+        <mapping class="Model.Portofoliu"/>
+        <mapping class="Model.Stire"/>
+        <mapping class="Model.User"/>
 
-	</session-factory>
+    </session-factory>
 
 </hibernate-configuration>
